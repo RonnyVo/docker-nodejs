@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  nodejs_web:
+    build: .
+    ports:
+    - "8020:3000"
+    volumes:
+    - ".:/usr/src/app"
+    command: /bin/bash -c "npm install & pm2-dev index.js"
